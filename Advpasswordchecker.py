@@ -1,5 +1,6 @@
 import hashlib
 import requests
+import getpass
 
 def is_common_password(password):
     # Hash the password using SHA-1
@@ -20,8 +21,8 @@ def is_common_password(password):
 
     return False  # Password is not found in the list
 
-# Get user input for password to check
-password = input("Enter your password: ")
+# Get user input for password to check (input is hidden)
+password = getpass.getpass("Enter your password: ")
 
 # Check the password
 if is_common_password(password):
